@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Planetary Guide</title>
+    <style>
+        body {
+            background-image: url('starfield.jpg');
+            color: white;
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+        }
+        .header, .footer, .body {
+            text-align: center;
+        }
+        header, footer, section {
+            margin-bottom: 20px;
+        }
+        .header button {
+            background-color: #0b3d91;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .body img {
+            width: 50%;
+            margin-top: 20px;
+        }
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #0b3d91;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header role="banner">
+    <h1>NASA Planetary Guide</h1>
+    <nav class="header">
+        <!-- Buttons for planets -->
+        <button onclick="updateContent('Mercury')">Mercury</button>
+        <button onclick="updateContent('Venus')">Venus</button>
+        <!-- Add other planets similarly -->
+    </nav>
+</header>
+
+<main role="main">
+    <section class="body">
+        <img id="planetImage" src="" alt="Select a planet image">
+        <div id="planetDesc" aria-label="planet description">Select a planet to see its description.</div>
+    </section>
+</main>
+
+<footer class="footer" role="contentinfo">
+    © NASA
+</footer>
+
+<script>
+    function updateContent(planet) {
+        document.getElementById('planetImage').src = planet.toLowerCase() + '.jpg'; // Placeholder path for images
+        document.getElementById('planetImage').alt = planet + " image"; // Alt text for accessibility
+        document.getElementById('planetDesc').innerText = planet + " description here."; // Placeholder for descriptions
+    }
+</script>
+
+</body>
+</html>
